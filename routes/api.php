@@ -14,10 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-Route::post('/product/order','App\Http\Controllers\ProductController@order')->name('order');
-Route::post('/register','App\Http\Controllers\UserController@register')->name('register');
-Route::post('/login','App\Http\Controllers\UserController@login')->name('login');
+
 

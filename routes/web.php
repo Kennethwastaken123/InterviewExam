@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('task','App\Http\Controllers\TaskController');
+Route::get('/list','App\Http\Controllers\TaskController@list')->name('list');
+Route::put('/delete/{id}','App\Http\Controllers\TaskController@delete')->name('task.delete');

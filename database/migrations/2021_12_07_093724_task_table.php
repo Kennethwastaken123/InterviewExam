@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Newuser extends Migration
+class TaskTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class Newuser extends Migration
      */
     public function up()
     {
-        Schema::create('newuser', function (Blueprint $table) {
+        Schema::create('task', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('task_name');
+            $table->string('task_description')->nullable();
+            $table->integer('status');
+            $table->dateTime('date_from')->nullable();
+            $table->dateTime('date_to')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class Newuser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('newuser');
+        //
     }
 }
